@@ -34,8 +34,8 @@ public class Main {
             boolean isRoman = converter.isRoman(parts[0]);
 
             if(isRoman){
-                a = converter.romanToInt(parts[0]);
-                b = converter.romanToInt(parts[2]);
+                    a = converter.romanToInt(parts[0]);
+                    b = converter.romanToInt(parts[2]);
             }else {
 
                 try {
@@ -52,6 +52,10 @@ public class Main {
                 }else{
                     throw new Exception("Числа должны быть от 1 до 10 включительно");
                 }
+            }
+
+            if(converter.trueRoman(parts[0]) || converter.trueRoman(parts[2])){
+                throw new Exception("Неверный формат ввода римских цифр");
             }
 
 

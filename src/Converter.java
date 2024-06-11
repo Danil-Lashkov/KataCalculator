@@ -9,6 +9,8 @@ class Converter {
         romanKeyMap.put('I', 1);
         romanKeyMap.put('V', 5);
         romanKeyMap.put('X', 10);
+        romanKeyMap.put('L', 50);
+        romanKeyMap.put('C', 100);
 
         arabianKeyMap.put(100, "C");
         arabianKeyMap.put(90, "XC");
@@ -24,6 +26,15 @@ class Converter {
 
     public boolean isRoman(String input){
         return romanKeyMap.containsKey(input.charAt(0));
+    }
+
+    public boolean trueRoman(String input){
+        switch (input){
+            case "I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX", "X":
+                return false;
+            default:
+                return true;
+        }
     }
 
     public int romanToInt(String part){
